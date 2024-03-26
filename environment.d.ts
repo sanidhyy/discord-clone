@@ -10,6 +10,9 @@ declare global {
       // uploading api key and app id
       UPLOADTHING_SECRET: string;
       UPLOADTHING_APP_ID: string;
+
+      // app base url
+      NEXT_PUBLIC_BASE_URL: string;
     }
   }
 }
