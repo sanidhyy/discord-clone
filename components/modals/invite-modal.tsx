@@ -1,5 +1,6 @@
 "use client";
 
+import axios from "axios";
 import { Check, Copy, RefreshCw } from "lucide-react";
 import { useState } from "react";
 
@@ -17,7 +18,7 @@ import { useOrigin } from "@/hooks/use-origin";
 import { ActionTooltip } from "../action-tooltip";
 
 export const InviteModal = () => {
-  const { isOpen, onClose, type, data } = useModal();
+  const { isOpen, onOpen, onClose, type, data } = useModal();
   const origin = useOrigin();
 
   const [copied, setCopied] = useState(false);
@@ -35,6 +36,22 @@ export const InviteModal = () => {
     setTimeout(() => {
       setCopied(false);
     }, 1000);
+  };
+
+  const onNew = async () => {
+    try {
+      setIsLoading(true);
+
+      const response = await axios.patch(
+        `/api/servers/${server?.id}/invite-code`
+      );
+
+      onOpen("invite", { server: response.data });
+    } catch (error: unknown) {
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -56,6 +73,7 @@ export const InviteModal = () => {
               className="bg-zinc-300/30 dark:bg-zinc-300/10 text-black dark:text-white cursor-pointer pointer-events-none"
               tabIndex={-1}
               value={inviteUrl}
+              disabled={isLoading}
               aria-disabled
             />
             <ActionTooltip
@@ -63,7 +81,12 @@ export const InviteModal = () => {
               align="end"
               label={copied ? "Copied" : "Copy to clipboard"}
             >
-              <Button onClick={onCopy} size="icon">
+              <Button
+                disabled={isLoading}
+                aria-disabled={isLoading}
+                onClick={onCopy}
+                size="icon"
+              >
                 {copied ? (
                   <Check className="w-4 h-4" />
                 ) : (
@@ -74,6 +97,9 @@ export const InviteModal = () => {
           </div>
 
           <Button
+            disabled={isLoading}
+            aria-disabled={isLoading}
+            onClick={onNew}
             variant="link"
             size="sm"
             className="text-xs text-zinc-500 mt-4"
