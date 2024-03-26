@@ -36,8 +36,8 @@ export const FileUpload = ({ endpoint, onChange, value }: FileUploadProps) => {
       onClientUploadComplete={(res) => {
         onChange(res?.[0].url);
       }}
-      onUploadError={(error: Error) => {
-        console.log(error);
+      onUploadError={(error) => {
+        console.error("File Upload Error: ", error);
       }}
     />
   );
