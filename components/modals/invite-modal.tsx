@@ -1,6 +1,7 @@
 "use client";
 
-import { Copy, RefreshCw } from "lucide-react";
+import { Check, Copy, RefreshCw } from "lucide-react";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -12,11 +13,29 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useModal } from "@/hooks/use-modal-store";
+import { useOrigin } from "@/hooks/use-origin";
+import { ActionTooltip } from "../action-tooltip";
 
 export const InviteModal = () => {
-  const { isOpen, onClose, type } = useModal();
+  const { isOpen, onClose, type, data } = useModal();
+  const origin = useOrigin();
+
+  const [copied, setCopied] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const isModalOpen = isOpen && type === "invite";
+
+  const { server } = data;
+  const inviteUrl = `${origin}/invite/${server?.inviteCode}`;
+
+  const onCopy = () => {
+    navigator.clipboard.writeText(inviteUrl);
+    setCopied(true);
+
+    setTimeout(() => {
+      setCopied(false);
+    }, 1000);
+  };
 
   return (
     <Dialog open={isModalOpen} onOpenChange={onClose}>
@@ -36,12 +55,22 @@ export const InviteModal = () => {
             <Input
               className="bg-zinc-300/30 dark:bg-zinc-300/10 text-black dark:text-white cursor-pointer pointer-events-none"
               tabIndex={-1}
-              value="invite-link"
+              value={inviteUrl}
               aria-disabled
             />
-            <Button size="icon">
-              <Copy className="w-4 h-4" />
-            </Button>
+            <ActionTooltip
+              side="left"
+              align="end"
+              label={copied ? "Copied" : "Copy to clipboard"}
+            >
+              <Button onClick={onCopy} size="icon">
+                {copied ? (
+                  <Check className="w-4 h-4" />
+                ) : (
+                  <Copy className="w-4 h-4" />
+                )}
+              </Button>
+            </ActionTooltip>
           </div>
 
           <Button
