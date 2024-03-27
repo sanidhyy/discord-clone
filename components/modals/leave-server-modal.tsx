@@ -1,5 +1,6 @@
 "use client";
 
+import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -13,7 +14,6 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useModal } from "@/hooks/use-modal-store";
-import axios from "axios";
 
 export const LeaveServerModal = () => {
   const { isOpen, onClose, type, data } = useModal();
