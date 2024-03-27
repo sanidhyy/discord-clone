@@ -12,7 +12,6 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import { isMacintosh } from "@/lib/utils";
 
 type ServerSearchProps = {
   data: {
@@ -45,8 +44,6 @@ export const ServerSearch = ({ data }: ServerSearchProps) => {
     return () => document.removeEventListener("keydown", down);
   }, []);
 
-  const isMac = isMacintosh();
-
   const onClick = ({
     id,
     type,
@@ -73,7 +70,7 @@ export const ServerSearch = ({ data }: ServerSearchProps) => {
           Search
         </p>
         <kbd
-          title={isMac ? "CMD+K" : "CTRL+K"}
+          title="Press Ctrl/Cmd + K to open search modal"
           className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground ml-auto"
           aria-disabled
         >
