@@ -9,6 +9,7 @@ import { db } from "@/lib/db";
 
 import { ServerChannel } from "./server-channel";
 import { ServerHeader } from "./server-header";
+import { ServerMember } from "./server-member";
 import { ServerSearch } from "./server-search";
 import { ServerSection } from "./server-section";
 
@@ -132,14 +133,16 @@ export const ServerSidebar = async ({ serverId }: ServerSidebarProps) => {
                 label="Text Channels"
               />
 
-              {textChannels.map((channel) => (
-                <ServerChannel
-                  key={channel.id}
-                  channel={channel}
-                  role={role}
-                  server={server}
-                />
-              ))}
+              <div className="space-y-[2px]">
+                {textChannels.map((channel) => (
+                  <ServerChannel
+                    key={channel.id}
+                    channel={channel}
+                    role={role}
+                    server={server}
+                  />
+                ))}
+              </div>
             </div>
           )}
 
@@ -152,14 +155,55 @@ export const ServerSidebar = async ({ serverId }: ServerSidebarProps) => {
                 label="Voice Channels"
               />
 
-              {audioChannels.map((channel) => (
-                <ServerChannel
-                  key={channel.id}
-                  channel={channel}
-                  role={role}
-                  server={server}
-                />
-              ))}
+              <div className="space-y-[2px]">
+                {audioChannels.map((channel) => (
+                  <ServerChannel
+                    key={channel.id}
+                    channel={channel}
+                    role={role}
+                    server={server}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {!!videoChannels?.length && (
+            <div className="mb-2">
+              <ServerSection
+                sectionType="channels"
+                channelType={ChannelType.VIDEO}
+                role={role}
+                label="Video Channels"
+              />
+
+              <div className="space-y-[2px]">
+                {videoChannels.map((channel) => (
+                  <ServerChannel
+                    key={channel.id}
+                    channel={channel}
+                    role={role}
+                    server={server}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {!!members?.length && (
+            <div className="mb-2">
+              <ServerSection
+                sectionType="members"
+                server={server}
+                role={role}
+                label="Members"
+              />
+
+              <div className="space-y-[2px]">
+                {members.map((member) => (
+                  <ServerMember />
+                ))}
+              </div>
             </div>
           )}
         </div>
