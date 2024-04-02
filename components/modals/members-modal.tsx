@@ -115,7 +115,7 @@ export const MembersModal = () => {
           {server?.members?.map((member) => (
             <div key={member.id} className="flex items-center gap-x-2 mb-6">
               <UserAvatar
-                name={member.profile.name}
+                alt={member.profile.name}
                 src={member.profile.imageUrl}
               />
               <div className="flex flex-col gap-y-1">
