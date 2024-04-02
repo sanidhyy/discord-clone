@@ -10,6 +10,7 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import { cn } from "@/lib/utils";
 
 import "./globals.css";
+import { SocketProvider } from "@/components/providers/socket-provider";
 
 const font = Open_Sans({ subsets: ["latin"] });
 
@@ -33,10 +34,14 @@ export default function RootLayout({
             enableSystem={false}
             storageKey="discord-theme"
           >
-            <NextSSRPlugin routerConfig={extractRouterConfig(appFileRouter)} />
+            <SocketProvider>
+              <NextSSRPlugin
+                routerConfig={extractRouterConfig(appFileRouter)}
+              />
 
-            <ModalProvider />
-            {children}
+              <ModalProvider />
+              {children}
+            </SocketProvider>
           </ThemeProvider>
         </body>
       </html>
