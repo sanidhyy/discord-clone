@@ -40,7 +40,7 @@ const ServerIdPage = async ({ params }: ServerIdPageProps) => {
 
   if (initialChannel?.name !== "general") return null;
 
-  return redirect(`/servers/${params.serverId}/channels/${initialChannel?.id}`);
+  redirect(`/servers/${params.serverId}/channels/${initialChannel?.id}`);
 };
 
 export default ServerIdPage;
