@@ -43,6 +43,7 @@ export const DeleteChannelModal = () => {
       router.push(`/servers/${server?.id}`);
     } catch (error: unknown) {
       console.error(error);
+    } finally {
       setIsLoading(false);
     }
   };

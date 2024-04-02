@@ -36,6 +36,7 @@ export const DeleteServerModal = () => {
       router.push("/");
     } catch (error: unknown) {
       console.error(error);
+    } finally {
       setIsLoading(false);
     }
   };
