@@ -11,6 +11,8 @@
   "dependencies": {
     "@clerk/nextjs": "^4.29.9",
     "@clerk/themes": "^1.7.10",
+    "@emoji-mart/data": "^1.1.2",
+    "@emoji-mart/react": "^1.1.1",
     "@hookform/resolvers": "^3.3.4",
     "@prisma/client": "^5.11.0",
     "@radix-ui/react-avatar": "^1.0.4",
@@ -28,6 +30,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "cmdk": "^1.0.0",
+    "emoji-mart": "^5.5.2",
     "lucide-react": "^0.363.0",
     "next": "14.1.4",
     "next-themes": "^0.3.0",
