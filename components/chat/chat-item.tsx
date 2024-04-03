@@ -5,6 +5,7 @@ import { MemberRole, type Member, type Profile } from "@prisma/client";
 import axios from "axios";
 import { Edit, FileIcon, ShieldAlert, ShieldCheck, Trash } from "lucide-react";
 import Image from "next/image";
+import { useParams, useRouter } from "next/navigation";
 import qs from "query-string";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -58,6 +59,14 @@ export const ChatItem = ({
 }: ChatItemProps) => {
   const [isEditing, setIsEditing] = useState(false);
   const { onOpen } = useModal();
+  const params = useParams();
+  const router = useRouter();
+
+  const onMemberClick = () => {
+    if (member.id === currentMember.id) return;
+
+    router.push(`/servers/${params?.serverId}/conversations/${member.id}`);
+  };
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -114,16 +123,22 @@ export const ChatItem = ({
   return (
     <div className="relative group flex items-center hover:bg-black/5 p-4 transition w-full">
       <div className="group flex gap-x-2 items-start w-full">
-        <div className="cursor-pointer hover:drop-shadow-md transition">
+        <button
+          onClick={onMemberClick}
+          className="cursor-pointer hover:drop-shadow-md transition rounded-full"
+        >
           <UserAvatar src={member.profile.imageUrl} alt={member.profile.name} />
-        </div>
+        </button>
 
         <div className="flex flex-col w-full">
           <div className="flex items-center gap-x-2">
             <div className="flex items-center">
-              <p className="font-semibold text-sm hover:underline cursor-pointer">
+              <button
+                onClick={onMemberClick}
+                className="font-semibold text-sm hover:underline cursor-pointer"
+              >
                 {member.profile.name}
-              </p>
+              </button>
 
               <ActionTooltip label={member.role}>
                 {roleIconMap[member.role]}
