@@ -2,7 +2,6 @@
 
 import { useUser } from "@clerk/nextjs";
 import { LiveKitRoom, VideoConference } from "@livekit/components-react";
-import type { Channel } from "@prisma/client";
 import { Loader2 } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -40,7 +39,7 @@ export const MediaRoom = ({ chatId, audio, video }: MediaRoomProps) => {
     return (
       <div className="flex flex-col flex-1 justify-center items-center">
         <Loader2 className="h-7 w-7 text-zinc-500 animate-spin my-4" />
-        <p className="text-xs text-zinc-50 dark:text-zinc-400">Loading...</p>
+        <p className="text-xs text-zinc-500 dark:text-zinc-400">Loading...</p>
       </div>
     );
 
