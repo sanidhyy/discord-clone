@@ -13,6 +13,11 @@ declare global {
 
       // app base url
       NEXT_PUBLIC_BASE_URL: string;
+
+      // livekit api keys and public url
+      LIVEKIT_API_KEY: string;
+      LIVEKIT_API_SECRET: string;
+      NEXT_PUBLIC_LIVEKIT_URL: string;
     }
   }
 }
