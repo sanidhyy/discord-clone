@@ -3,6 +3,7 @@
 import { useUser } from "@clerk/nextjs";
 import { LiveKitRoom, VideoConference } from "@livekit/components-react";
 import { Loader2 } from "lucide-react";
+import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 import "@livekit/components-styles";
@@ -15,6 +16,7 @@ type MediaRoomProps = {
 
 export const MediaRoom = ({ chatId, audio, video }: MediaRoomProps) => {
   const { user } = useUser();
+  const { resolvedTheme } = useTheme();
 
   const [token, setToken] = useState("");
 
@@ -45,7 +47,7 @@ export const MediaRoom = ({ chatId, audio, video }: MediaRoomProps) => {
 
   return (
     <LiveKitRoom
-      data-lk-theme="default"
+      data-lk-theme={resolvedTheme === "dark" ? "default" : "light"}
       serverUrl={process.env.NEXT_PUBLIC_LIVEKIT_URL}
       token={token}
       connect
