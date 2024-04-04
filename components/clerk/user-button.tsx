@@ -15,6 +15,8 @@ export const UserButton = () => {
           avatarBox: "h-[48px] w-[48px]",
         },
       }}
+      userProfileMode="navigation"
+      userProfileUrl="/account"
     />
   );
 };
