@@ -7,7 +7,7 @@ import { Edit, FileIcon, ShieldAlert, ShieldCheck, Trash } from "lucide-react";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import qs from "query-string";
-import { useEffect, useState } from "react";
+import { type ElementRef, useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
@@ -58,6 +58,7 @@ export const ChatItem = ({
   socketQuery,
 }: ChatItemProps) => {
   const [isEditing, setIsEditing] = useState(false);
+  const inputRef = useRef<ElementRef<"input">>(null);
   const { onOpen } = useModal();
   const params = useParams();
   const router = useRouter();
@@ -120,6 +121,12 @@ export const ChatItem = ({
     }
   };
 
+  useEffect(() => {
+    if (isEditing) {
+      form.setFocus("content");
+    }
+  }, [isEditing, form.setFocus]);
+
   return (
     <div className="relative group flex items-center hover:bg-black/5 p-4 transition w-full">
       <div className="group flex gap-x-2 items-start w-full">
@@ -155,7 +162,7 @@ export const ChatItem = ({
               href={fileUrl}
               target="_blank"
               rel="noreferrer noopener"
-              className="relative aspect-square rounded-md mt-2 overflow-hidden border flex items-enter bg-secondary h-48 w-48"
+              className="relative aspect-square rounded-md mt-2 overflow-hidden border flex items-center bg-secondary h-48 w-48"
             >
               <Image
                 src={fileUrl}
@@ -213,7 +220,7 @@ export const ChatItem = ({
                           <Input
                             disabled={isLoading}
                             aria-disabled={isLoading}
-                            className="p-2 bg-zinc-200/90 dark:bg-zinc-700/75 border-none border-0 focus-visible:ring-0 focus-visible:ring-offset-0 text-zinc-600 dark:text-zinc-200"
+                            className="p-2 bg-zinc-200/90 dark:bg-zinc-700/75 border-none border-0 focus-visible:ring-offset-0 text-zinc-600 dark:text-zinc-200"
                             placeholder="Edited message"
                             {...field}
                           />
@@ -242,12 +249,12 @@ export const ChatItem = ({
       </div>
 
       {canDeleteMessage && (
-        <div className="hidden group-hover:flex items-center gap-x-2 absolute p-1 -top-2 right-5 bg-white dark:bg-zinc-800 border rounded-sm">
+        <div className="md:hidden md:group-hover:flex items-center gap-x-2 absolute p-1 -top-2 right-5 bg-white dark:bg-zinc-800 border rounded-sm">
           {canEditMessage && (
             <ActionTooltip label="Edit">
               <Edit
-                onClick={() => setIsEditing(true)}
-                className="cursor-pointer ml-auto w-4 h-4 text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-300 transition"
+                onClick={() => setIsEditing((prevIsEditing) => !prevIsEditing)}
+                className="cursor-pointer ml-auto mb-2 md:mb-auto w-4 h-4 text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-300 transition"
               />
             </ActionTooltip>
           )}
