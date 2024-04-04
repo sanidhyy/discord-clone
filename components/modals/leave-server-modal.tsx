@@ -71,7 +71,7 @@ export const LeaveServerModal = () => {
               disabled={isLoading}
               aria-disabled={isLoading}
               onClick={onClick}
-              variant="primary"
+              variant="destructive"
             >
               Confirm
             </Button>
