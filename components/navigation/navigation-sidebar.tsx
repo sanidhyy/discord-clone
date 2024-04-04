@@ -1,3 +1,5 @@
+import { SignOutButton, SignedIn } from "@clerk/nextjs";
+import { LogOut } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
@@ -67,7 +69,17 @@ export const NavigationSidebar = async () => {
           />
         </Link>
         <ModeToggle align="start" side="top" />
-        <UserButton />
+        <SignedIn>
+          <div className="hidden md:block">
+            <UserButton />
+          </div>
+
+          <div className="md:hidden hover:bg-background/30 p-2.5 rounded-md">
+            <SignOutButton>
+              <LogOut className="h-5 w-5 cursor-pointer" />
+            </SignOutButton>
+          </div>
+        </SignedIn>
       </div>
     </div>
   );
