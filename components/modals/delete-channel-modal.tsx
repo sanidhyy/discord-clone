@@ -79,7 +79,7 @@ export const DeleteChannelModal = () => {
               disabled={isLoading}
               aria-disabled={isLoading}
               onClick={onClick}
-              variant="primary"
+              variant="destructive"
             >
               Confirm
             </Button>
