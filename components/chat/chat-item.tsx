@@ -192,7 +192,7 @@ export const ChatItem = ({
               className={cn(
                 "text-sm text-zinc-600 dark:text-zinc-300",
                 deleted &&
-                  "italic text-zinc-500 dark:text-zinc-400 text-sm mt-1"
+                  "italic text-zinc-500 dark:text-zinc-400 text-sm mt-1",
               )}
             >
               {content}{" "}

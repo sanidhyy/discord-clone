@@ -21,7 +21,7 @@ export const ChatVideoButton = () => {
           video: isVideo ? undefined : true,
         },
       },
-      { skipNull: true }
+      { skipNull: true },
     );
 
     router.push(url);

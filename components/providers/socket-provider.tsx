@@ -33,7 +33,7 @@ export const SocketProvider = ({ children }: PropsWithChildren) => {
       {
         path: "/api/socket/io",
         addTrailingSlash: false,
-      }
+      },
     );
 
     socketInstance.on("connect", () => {

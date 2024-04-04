@@ -7,12 +7,12 @@ export async function GET(req: NextRequest) {
   if (!room) {
     return NextResponse.json(
       { error: 'Missing "room" query parameter' },
-      { status: 400 }
+      { status: 400 },
     );
   } else if (!username) {
     return NextResponse.json(
       { error: 'Missing "username" query parameter' },
-      { status: 400 }
+      { status: 400 },
     );
   }
 
@@ -23,7 +23,7 @@ export async function GET(req: NextRequest) {
   if (!apiKey || !apiSecret || !wsUrl) {
     return NextResponse.json(
       { error: "Server misconfigured" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 

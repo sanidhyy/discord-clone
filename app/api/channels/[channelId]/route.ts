@@ -6,7 +6,7 @@ import { db } from "@/lib/db";
 
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { channelId: string } }
+  { params }: { params: { channelId: string } },
 ) {
   try {
     const profile = await currentProfile();
@@ -56,7 +56,7 @@ export async function DELETE(
 
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: { channelId: string } }
+  { params }: { params: { channelId: string } },
 ) {
   try {
     const profile = await currentProfile();

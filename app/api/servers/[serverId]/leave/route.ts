@@ -11,7 +11,7 @@ export async function PATCH(
     params: {
       serverId: string;
     };
-  }
+  },
 ) {
   try {
     const profile = await currentProfile();

@@ -6,7 +6,7 @@ import { db } from "@/lib/db";
 
 export async function PATCH(
   _req: NextRequest,
-  { params }: { params: { serverId: string } }
+  { params }: { params: { serverId: string } },
 ) {
   try {
     const profile = await currentProfile();

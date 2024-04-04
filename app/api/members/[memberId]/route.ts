@@ -11,7 +11,7 @@ export async function PATCH(
     params: {
       memberId: string;
     };
-  }
+  },
 ) {
   try {
     const profile = await currentProfile();
@@ -66,7 +66,7 @@ export async function PATCH(
 
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { memberId: string } }
+  { params }: { params: { memberId: string } },
 ) {
   try {
     const profile = await currentProfile();
