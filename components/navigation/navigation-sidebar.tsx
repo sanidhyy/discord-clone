@@ -74,11 +74,14 @@ export const NavigationSidebar = async () => {
             <UserButton />
           </div>
 
-          <div className="md:hidden hover:bg-background/30 p-2.5 rounded-md">
-            <SignOutButton>
+          <SignOutButton>
+            <button
+              className="md:hidden hover:bg-background/30 p-2.5 rounded-md"
+              title="Log out"
+            >
               <LogOut className="h-5 w-5 cursor-pointer" />
-            </SignOutButton>
-          </div>
+            </button>
+          </SignOutButton>
         </SignedIn>
       </div>
     </div>
