@@ -58,7 +58,13 @@ export const NavigationSidebar = async () => {
 
       <div className="pb-3 mt-auto flex items-center flex-col gap-y-4">
         <Link href={links.sourceCode} target="_blank" rel="noreferrer noopener">
-          <Image src="/github.png" alt="Source Code" height={20} width={20} />
+          <Image
+            src="/github.png"
+            alt="Source Code"
+            height={20}
+            width={20}
+            className="dark:invert-0 invert"
+          />
         </Link>
         <ModeToggle align="start" side="top" />
         <UserButton />
