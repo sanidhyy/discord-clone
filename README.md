@@ -263,6 +263,7 @@ You might encounter some bugs while using this app. You are more than welcome to
 
 Useful resources and dependencies that are used in Discord Clone.
 
+- Thanks to CodeWithAntonio: https://codewithantonio.com/
 - [@clerk/nextjs](https://www.npmjs.com/package/@clerk/nextjs): ^4.29.9
 - [@clerk/themes](https://www.npmjs.com/package/@clerk/themes): ^1.7.10
 - [@emoji-mart/data](https://www.npmjs.com/package/@emoji-mart/data): ^1.1.2
