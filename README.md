@@ -11,7 +11,7 @@
 [![Github commits](https://flat.badgen.net/github/commits/sanidhyy/discord-clone?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/discord-clone/commits "Github commits")
 [![GitHub issues](https://flat.badgen.net/github/issues/sanidhyy/discord-clone?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/discord-clone/issues "GitHub issues")
 [![GitHub pull requests](https://flat.badgen.net/github/prs/sanidhyy/discord-clone?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/discord-clone/pulls "GitHub pull requests")
-[![Railway status](https://img.shields.io/badge/Railway-131415?style=for-the-badge&logo=railway&logoColor=white)](https://discord-clone-production-e781.up.railway.app/ "Railway status")
+[![Vercel status](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://appdiscord.vercel.app/ "Vercel status")
 
 <!-- Table of Contents -->
 <details>
@@ -32,6 +32,7 @@
 - [Buy Me a Coffee](#coffee-buy-me-a-coffee)
 - [Follow Me](#rocket-follow-me)
 - [Learn More](#books-learn-more)
+- [Deploy on Vercel](#page_with_curl-deploy-on-vercel)
 - [Deploy on Railway](#page_with_curl-deploy-on-railway)
 - [Give A Star](#star-give-a-star)
 - [Star History](#star2-star-history)
@@ -336,6 +337,12 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## :page_with_curl: Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 ## :page_with_curl: Deploy on Railway
 
