@@ -11,7 +11,6 @@
 [![Github commits](https://flat.badgen.net/github/commits/sanidhyy/discord-clone?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/discord-clone/commits "Github commits")
 [![GitHub issues](https://flat.badgen.net/github/issues/sanidhyy/discord-clone?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/discord-clone/issues "GitHub issues")
 [![GitHub pull requests](https://flat.badgen.net/github/prs/sanidhyy/discord-clone?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/discord-clone/pulls "GitHub pull requests")
-[![Vercel status](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://appdiscord.vercel.app/ "Vercel status")
 
 <!-- Table of Contents -->
 <details>
