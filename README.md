@@ -253,7 +253,7 @@ NEXT_PUBLIC_LIVEKIT_URL=wss://discord-clone-xxxxxxxxxx.livekit.cloud
 
 ## :wrench: Stats
 
-[![Stats for Discord Clone](/.github/images/stats.svg "Stats for Discord Clone")](https://pagespeed.web.dev/analysis?url=https://discord-clone-production-e781.up.railway.app/ "Stats for Discord Clone")
+[![Stats for Discord Clone](/.github/images/stats.svg "Stats for Discord Clone")](https://pagespeed.web.dev/ "Stats for Discord Clone")
 
 ## :raised_hands: Contribute
 
