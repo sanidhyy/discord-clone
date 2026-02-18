@@ -35,8 +35,10 @@ type ModifiedDialogContentType = React.ForwardRefExoticComponent<
   React.RefAttributes<any>;
 
 const DialogContent = React.forwardRef<
-  React.ElementRef<ModifiedDialogContentType>,
-  React.ComponentPropsWithoutRef<ModifiedDialogContentType>
+  React.ElementRef<typeof DialogPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content> & {
+    hideCloseIcon?: boolean;
+  }
 >(({ className, children, hideCloseIcon, ...props }, ref) => (
   <DialogPortal>
     <DialogOverlay />

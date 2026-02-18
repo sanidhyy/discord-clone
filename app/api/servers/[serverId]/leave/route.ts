@@ -8,22 +8,24 @@ export async function PATCH(
   {
     params,
   }: {
-    params: {
+    params: Promise<{
       serverId: string;
-    };
+    }>;
   },
 ) {
   try {
+    const { serverId } = await params;
+
     const profile = await currentProfile();
 
     if (!profile) return new NextResponse("Unauthorized.", { status: 401 });
 
-    if (!params.serverId)
+    if (!serverId)
       return new NextResponse("Server ID is missing.", { status: 400 });
 
     const server = await db.server.update({
       where: {
-        id: params.serverId,
+        id: serverId,
         profileId: {
           not: profile.id,
         },

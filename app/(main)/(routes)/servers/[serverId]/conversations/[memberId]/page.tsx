@@ -10,23 +10,26 @@ import { db } from "@/lib/db";
 import { MediaRoom } from "@/components/media-room";
 
 type MemberIdPageProps = {
-  params: {
+  params: Promise<{
     memberId: string;
     serverId: string;
-  };
-  searchParams: {
+  }>;
+  searchParams: Promise<{
     video?: boolean;
-  };
+  }>;
 };
 
 const MemberIdPage = async ({ params, searchParams }: MemberIdPageProps) => {
+  const { memberId, serverId } = await params;
+  const { video } = await searchParams;
+
   const profile = await currentProfile();
 
   if (!profile) return redirectToSignIn();
 
   const currentMember = await db.member.findFirst({
     where: {
-      serverId: params.serverId,
+      serverId: serverId,
       profileId: profile.id,
     },
     include: {
@@ -38,10 +41,10 @@ const MemberIdPage = async ({ params, searchParams }: MemberIdPageProps) => {
 
   const conversation = await getOrCreateConversation(
     currentMember.id,
-    params.memberId,
+    memberId,
   );
 
-  if (!conversation) redirect(`/servers/${params.serverId}`);
+  if (!conversation) redirect(`/servers/${serverId}`);
 
   const { memberOne, memberTwo } = conversation;
 
@@ -53,13 +56,13 @@ const MemberIdPage = async ({ params, searchParams }: MemberIdPageProps) => {
       <ChatHeader
         imageUrl={otherMember.profile.imageUrl}
         name={otherMember.profile.name}
-        serverId={params.serverId}
+        serverId={serverId}
         type="conversation"
       />
 
-      {searchParams.video && <MediaRoom chatId={conversation.id} video audio />}
+      {video && <MediaRoom chatId={conversation.id} video audio />}
 
-      {!searchParams.video && (
+      {!video && (
         <>
           <ChatMessages
             member={currentMember}

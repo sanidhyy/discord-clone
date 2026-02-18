@@ -4,9 +4,11 @@ import { NextResponse, type NextRequest } from "next/server";
 
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: { serverId: string } },
+  { params }: { params: Promise<{ serverId: string }> },
 ) {
   try {
+    const { serverId } = await params;
+
     const profile = await currentProfile();
     const { name, imageUrl } = await req.json();
 
@@ -14,7 +16,7 @@ export async function PATCH(
 
     const server = await db.server.update({
       where: {
-        id: params.serverId,
+        id: serverId,
         profileId: profile.id,
       },
       data: {
@@ -32,16 +34,18 @@ export async function PATCH(
 
 export async function DELETE(
   _req: NextRequest,
-  { params }: { params: { serverId: string } },
+  { params }: { params: Promise<{ serverId: string }> },
 ) {
   try {
+    const { serverId } = await params;
+
     const profile = await currentProfile();
 
     if (!profile) return new NextResponse("Unauthorized.", { status: 401 });
 
     const server = await db.server.delete({
       where: {
-        id: params.serverId,
+        id: serverId,
         profileId: profile.id,
       },
     });

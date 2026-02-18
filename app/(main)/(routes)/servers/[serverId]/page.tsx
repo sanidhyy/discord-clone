@@ -5,19 +5,21 @@ import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
 
 type ServerIdPageProps = {
-  params: {
+  params: Promise<{
     serverId: string;
-  };
+  }>;
 };
 
 const ServerIdPage = async ({ params }: ServerIdPageProps) => {
+  const { serverId } = await params;
+
   const profile = await currentProfile();
 
   if (!profile) return redirectToSignIn();
 
   const server = await db.server.findUnique({
     where: {
-      id: params.serverId,
+      id: serverId,
       members: {
         some: {
           profileId: profile.id,
@@ -40,7 +42,7 @@ const ServerIdPage = async ({ params }: ServerIdPageProps) => {
 
   if (initialChannel?.name !== "general") return null;
 
-  redirect(`/servers/${params.serverId}/channels/${initialChannel?.id}`);
+  redirect(`/servers/${serverId}/channels/${initialChannel?.id}`);
 };
 
 export default ServerIdPage;

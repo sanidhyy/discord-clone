@@ -6,9 +6,11 @@ import { db } from "@/lib/db";
 
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { channelId: string } },
+  { params }: { params: Promise<{ channelId: string }> },
 ) {
   try {
+    const { channelId } = await params;
+
     const profile = await currentProfile();
 
     if (!profile) return new NextResponse("Unauthorized.", { status: 401 });
@@ -20,7 +22,7 @@ export async function DELETE(
     if (!serverId)
       return new NextResponse("Server ID is missing.", { status: 400 });
 
-    if (!params?.channelId)
+    if (!channelId)
       return new NextResponse("Channel ID is missing.", { status: 400 });
 
     const server = await db.server.update({
@@ -38,7 +40,7 @@ export async function DELETE(
       data: {
         channels: {
           delete: {
-            id: params.channelId,
+            id: channelId,
             name: {
               not: "general",
             },
@@ -56,9 +58,11 @@ export async function DELETE(
 
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: { channelId: string } },
+  { params }: { params: Promise<{ channelId: string }> },
 ) {
   try {
+    const { channelId } = await params;
+
     const profile = await currentProfile();
 
     if (!profile) return new NextResponse("Unauthorized.", { status: 401 });
@@ -71,7 +75,7 @@ export async function PATCH(
     if (!serverId)
       return new NextResponse("Server ID is missing.", { status: 400 });
 
-    if (!params?.channelId)
+    if (!channelId)
       return new NextResponse("Channel ID is missing.", { status: 400 });
 
     if (name === "general")
@@ -93,7 +97,7 @@ export async function PATCH(
         channels: {
           update: {
             where: {
-              id: params.channelId,
+              id: channelId,
               NOT: {
                 name: "general",
               },
