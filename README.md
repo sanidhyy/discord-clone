@@ -44,38 +44,14 @@
 Here is the folder structure of this app.
 
 <!--- FOLDER_STRUCTURE_START --->
-
 ```bash
 discord-clone/
-  |- actions/
-    |- challenge-progress.ts
-    |- user-progress.ts
-    |- user-subscription.ts
   |- app/
     |-- (auth)/
-        |--- (routes)/
-            |---- account/
-            |---- sign-in/
-            |---- sign-up/
-        |--- layout.tsx
-    |-- (invite)/(routes)/invite/[inviteCode]/
+    |-- (invite)/
     |-- (main)/
-        |--- (routes)/servers/[serverId]/
-            |---- channels/[channelId]/
-            |---- conversations/[memberId]/
-            |---- layout.tsx
-            |---- page.tsx
-        |--- layout.tsx
     |-- (setup)/
-        |--- page.tsx
     |-- api/
-        |--- channels/
-        |--- direct-messages/
-        |--- livekit/
-        |--- members/
-        |--- messages/
-        |--- servers/
-        |--- uploadthing/
     |-- apple-icon.png
     |-- error.tsx
     |-- favicon.ico
@@ -111,39 +87,32 @@ discord-clone/
     |-- use-origin.ts
   |- lib/
     |-- conversation.ts
-    |-- current-profile-page.ts
+    |-- current-profile-pages.ts
     |-- current-profile.ts
     |-- db.ts
     |-- initial-profile.ts
     |-- uploadthing.ts
     |-- utils.ts
-  |- pages/api/socket/
-    |-- direct-messages/
-    |-- messages/
-    |-- io.ts
+  |- pages/
+    |-- api/
   |- prisma/
     |-- schema.prisma
   |- public/
-    |-- github.png
-    |-- logo.png
-  |- .env
   |- .env.example
-  |- .eslintrc.js
+  |- .env/.env.local
+  |- .eslintrc.json
   |- .gitignore
-  |- .prettierrc.json
+  |- bun.lock
   |- components.json
-  |- constants.ts
-  |- drizzle.config.ts
   |- environment.d.ts
   |- middleware.ts
   |- next.config.mjs
-  |- package-lock.json
   |- package.json
   |- postcss.config.js
   |- tailwind.config.ts
   |- tsconfig.json
+  |- types.ts
 ```
-
 <!--- FOLDER_STRUCTURE_END --->
 
 <br />
@@ -263,59 +232,60 @@ Useful resources and dependencies that are used in Discord Clone.
 
 - Thanks to CodeWithAntonio: https://codewithantonio.com/
 <!--- DEPENDENCIES_START --->
-- [@clerk/nextjs](https://www.npmjs.com/package/@clerk/nextjs): ^4.29.9
+- [@clerk/nextjs](https://www.npmjs.com/package/@clerk/nextjs): ^4.31.5
 - [@clerk/themes](https://www.npmjs.com/package/@clerk/themes): ^1.7.10
-- [@emoji-mart/data](https://www.npmjs.com/package/@emoji-mart/data): ^1.1.2
+- [@emoji-mart/data](https://www.npmjs.com/package/@emoji-mart/data): ^1.2.1
 - [@emoji-mart/react](https://www.npmjs.com/package/@emoji-mart/react): ^1.1.1
-- [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): ^3.3.4
-- [@livekit/components-react](https://www.npmjs.com/package/@livekit/components-react): ^2.0.5
-- [@livekit/components-styles](https://www.npmjs.com/package/@livekit/components-styles): ^1.0.11
+- [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): ^3.10.0
+- [@livekit/components-react](https://www.npmjs.com/package/@livekit/components-react): 2.0.5
+- [@livekit/components-styles](https://www.npmjs.com/package/@livekit/components-styles): 1.0.11
 - [@prisma/client](https://www.npmjs.com/package/@prisma/client): ^5.11.0
-- [@radix-ui/react-avatar](https://www.npmjs.com/package/@radix-ui/react-avatar): ^1.0.4
-- [@radix-ui/react-dialog](https://www.npmjs.com/package/@radix-ui/react-dialog): ^1.0.5
-- [@radix-ui/react-dropdown-menu](https://www.npmjs.com/package/@radix-ui/react-dropdown-menu): ^2.0.6
-- [@radix-ui/react-label](https://www.npmjs.com/package/@radix-ui/react-label): ^2.0.2
-- [@radix-ui/react-popover](https://www.npmjs.com/package/@radix-ui/react-popover): ^1.0.7
-- [@radix-ui/react-scroll-area](https://www.npmjs.com/package/@radix-ui/react-scroll-area): ^1.0.5
-- [@radix-ui/react-select](https://www.npmjs.com/package/@radix-ui/react-select): ^2.0.0
-- [@radix-ui/react-separator](https://www.npmjs.com/package/@radix-ui/react-separator): ^1.0.3
-- [@radix-ui/react-slot](https://www.npmjs.com/package/@radix-ui/react-slot): ^1.0.2
-- [@radix-ui/react-tooltip](https://www.npmjs.com/package/@radix-ui/react-tooltip): ^1.0.7
-- [@tanstack/react-query](https://www.npmjs.com/package/@tanstack/react-query): ^4.35.3
+- [@radix-ui/react-avatar](https://www.npmjs.com/package/@radix-ui/react-avatar): ^1.1.11
+- [@radix-ui/react-dialog](https://www.npmjs.com/package/@radix-ui/react-dialog): ^1.1.15
+- [@radix-ui/react-dropdown-menu](https://www.npmjs.com/package/@radix-ui/react-dropdown-menu): ^2.1.16
+- [@radix-ui/react-label](https://www.npmjs.com/package/@radix-ui/react-label): ^2.1.8
+- [@radix-ui/react-popover](https://www.npmjs.com/package/@radix-ui/react-popover): ^1.1.15
+- [@radix-ui/react-scroll-area](https://www.npmjs.com/package/@radix-ui/react-scroll-area): ^1.2.10
+- [@radix-ui/react-select](https://www.npmjs.com/package/@radix-ui/react-select): ^2.2.6
+- [@radix-ui/react-separator](https://www.npmjs.com/package/@radix-ui/react-separator): ^1.1.8
+- [@radix-ui/react-slot](https://www.npmjs.com/package/@radix-ui/react-slot): ^1.2.4
+- [@radix-ui/react-tooltip](https://www.npmjs.com/package/@radix-ui/react-tooltip): ^1.2.8
+- [@tanstack/react-query](https://www.npmjs.com/package/@tanstack/react-query): ^4.43.0
+- [@types/node](https://www.npmjs.com/package/@types/node): ^25.2.3
+- [@types/react](https://www.npmjs.com/package/@types/react): ^19.2.14
+- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^19.2.3
+- [@types/uuid](https://www.npmjs.com/package/@types/uuid): ^11.0.0
 - [@uploadthing/react](https://www.npmjs.com/package/@uploadthing/react): ^6.4.1
-- [axios](https://www.npmjs.com/package/axios): ^1.6.8
-- [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.0
-- [clsx](https://www.npmjs.com/package/clsx): ^2.1.0
-- [cmdk](https://www.npmjs.com/package/cmdk): ^1.0.0
-- [date-fns](https://www.npmjs.com/package/date-fns): ^3.6.0
-- [emoji-mart](https://www.npmjs.com/package/emoji-mart): ^5.5.2
-- [livekit-server-sdk](https://www.npmjs.com/package/livekit-server-sdk): ^2.1.2
-- [lucide-react](https://www.npmjs.com/package/lucide-react): ^0.363.0
-- [next](https://www.npmjs.com/package/next): 14.1.4
-- [next-themes](https://www.npmjs.com/package/next-themes): ^0.3.0
-- [query-string](https://www.npmjs.com/package/query-string): ^9.0.0
-- [react](https://www.npmjs.com/package/react): ^18
-- [react-dom](https://www.npmjs.com/package/react-dom): ^18
-- [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.51.1
-- [socket.io](https://www.npmjs.com/package/socket.io): ^4.7.5
-- [socket.io-client](https://www.npmjs.com/package/socket.io-client): ^4.7.5
-- [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^2.2.2
-- [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate): ^1.0.7
-- [uploadthing](https://www.npmjs.com/package/uploadthing): ^6.7.0
-- [uuid](https://www.npmjs.com/package/uuid): ^9.0.1
-- [zod](https://www.npmjs.com/package/zod): ^3.22.4
-- [zustand](https://www.npmjs.com/package/zustand): ^4.5.2
-- [@types/node](https://www.npmjs.com/package/@types/node): ^20
-- [@types/react](https://www.npmjs.com/package/@types/react): ^18
-- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^18
-- [@types/uuid](https://www.npmjs.com/package/@types/uuid): ^9.0.8
-- [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.0.1
+- [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.4.24
+- [axios](https://www.npmjs.com/package/axios): ^1.13.5
+- [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
+- [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
+- [cmdk](https://www.npmjs.com/package/cmdk): ^1.1.1
+- [date-fns](https://www.npmjs.com/package/date-fns): ^4.1.0
+- [emoji-mart](https://www.npmjs.com/package/emoji-mart): ^5.6.0
 - [eslint](https://www.npmjs.com/package/eslint): ^8
-- [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 14.1.4
+- [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 16.0.10
+- [livekit-server-sdk](https://www.npmjs.com/package/livekit-server-sdk): ^2.1.2
+- [lucide-react](https://www.npmjs.com/package/lucide-react): ^0.574.0
+- [next](https://www.npmjs.com/package/next): 15.5.10
+- [next-themes](https://www.npmjs.com/package/next-themes): ^0.3.0
 - [postcss](https://www.npmjs.com/package/postcss): ^8
 - [prisma](https://www.npmjs.com/package/prisma): ^5.11.0
+- [query-string](https://www.npmjs.com/package/query-string): ^9.3.1
+- [react](https://www.npmjs.com/package/react): ^19.2.4
+- [react-dom](https://www.npmjs.com/package/react-dom): ^19.2.4
+- [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.71.1
+- [socket.io](https://www.npmjs.com/package/socket.io): ^4.8.3
+- [socket.io-client](https://www.npmjs.com/package/socket.io-client): ^4.8.3
+- [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^2.6.1
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^3.3.0
-- [typescript](https://www.npmjs.com/package/typescript): ^5
+- [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate): ^1.0.7
+- [typescript](https://www.npmjs.com/package/typescript): ^5.9.3
+- [uploadthing](https://www.npmjs.com/package/uploadthing): ^6.13.3
+- [uuid](https://www.npmjs.com/package/uuid): ^13.0.0
+- [zod](https://www.npmjs.com/package/zod): ^4.3.6
+- [zustand](https://www.npmjs.com/package/zustand): ^5.0.11
+
 <!--- DEPENDENCIES_END --->
 
 ## :coffee: Buy Me a Coffee
