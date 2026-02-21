@@ -43,6 +43,8 @@
 
 Here is the folder structure of this app.
 
+<!--- FOLDER_STRUCTURE_START --->
+
 ```bash
 discord-clone/
   |- actions/
@@ -142,6 +144,8 @@ discord-clone/
   |- tsconfig.json
 ```
 
+<!--- FOLDER_STRUCTURE_END --->
+
 <br />
 
 ## :toolbox: Getting Started
@@ -185,33 +189,28 @@ NEXT_PUBLIC_LIVEKIT_URL=wss://discord-clone-xxxxxxxxxx.livekit.cloud
 ```
 
 5. **Next.js Telemetry Disabled:**
-
    - Visit the Next.js documentation or repository.
    - Find the instructions to disable telemetry.
    - Set `NEXT_TELEMETRY_DISABLED` to `1` in your `.env` file.
 
 6. **Clerk Authentication Keys:**
-
    - Go to the Clerk website and sign in to your account.
    - Navigate to the settings or API keys section.
    - Generate or locate your Clerk publishable and secret keys.
    - Set `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` and `CLERK_SECRET_KEY` accordingly in the `.env` file.
 
 7. **Clerk Redirect URLs:**
-
    - Refer to the Clerk documentation or settings.
    - Set the required URLs for sign-in, sign-up, after sign-in, and after sign-up.
    - Assign these URLs to `NEXT_PUBLIC_CLERK_SIGN_IN_URL`, `NEXT_PUBLIC_CLERK_SIGN_UP_URL`, `NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL`, and `NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL` respectively in the `.env` file.
 
 8. **Neon Database URL:**
-
    - Access your database provider (e.g., PostgreSQL).
    - Retrieve the necessary connection details such as username, password, host, and port.
    - Construct the database URL using the obtained information and SSL mode.
    - Assign the constructed URL to `DATABASE_URL` in the `.env` file.
 
 9. **Uploading API Key and App ID:**
-
    - Go to the UploadThing website or application.
    - Find the section for API keys or account settings.
    - Generate or locate your secret key and app ID.
@@ -230,7 +229,6 @@ NEXT_PUBLIC_LIVEKIT_URL=wss://discord-clone-xxxxxxxxxx.livekit.cloud
 - Set `LIVEKIT_API_KEY`, `LIVEKIT_API_SECRET`, and `NEXT_PUBLIC_LIVEKIT_URL` in the `.env` file according to the obtained information.
 
 12. Save and Secure:
-
     - Save the changes to the `.env.local` file.
 
 13. Install Project Dependencies using `npm install --legacy-peer-deps` or `yarn install --legacy-peer-deps`.
@@ -264,6 +262,7 @@ You might encounter some bugs while using this app. You are more than welcome to
 Useful resources and dependencies that are used in Discord Clone.
 
 - Thanks to CodeWithAntonio: https://codewithantonio.com/
+<!--- DEPENDENCIES_START --->
 - [@clerk/nextjs](https://www.npmjs.com/package/@clerk/nextjs): ^4.29.9
 - [@clerk/themes](https://www.npmjs.com/package/@clerk/themes): ^1.7.10
 - [@emoji-mart/data](https://www.npmjs.com/package/@emoji-mart/data): ^1.1.2
@@ -317,6 +316,7 @@ Useful resources and dependencies that are used in Discord Clone.
 - [prisma](https://www.npmjs.com/package/prisma): ^5.11.0
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^3.3.0
 - [typescript](https://www.npmjs.com/package/typescript): ^5
+<!--- DEPENDENCIES_END --->
 
 ## :coffee: Buy Me a Coffee
 
@@ -347,27 +347,21 @@ Check out [Next.js deployment documentation](https://nextjs.org/docs/deployment)
 Deploying your Next.js app on Railway.app is simple and straightforward.
 
 1. **Sign up or Log in:**
-
    - Head over to [Railway.app](https://railway.app/) and either sign up for a new account or log in to your existing one.
 
 2. **Connect Repository:**
-
    - Connect your project repository (e.g., GitHub, GitLab, Bitbucket) to Railway.
 
 3. **Configure Environment Variables:**
-
    - Set up your environment variables in Railway's dashboard or using their CLI. Ensure you include all required variables as per your project's configuration.
 
 4. **Set Up Build Command:**
-
    - Configure your build command to ensure Railway can build and deploy your Next.js app correctly. Typically, this command will be `yarn build` or `npm run build`.
 
 5. **Deploy:**
-
    - Trigger the deployment process either from Railway's dashboard or through their CLI.
 
 6. **Monitor Deployment:**
-
    - Once deployed, monitor the deployment process and check for any errors or warnings in Railway's dashboard.
 
 7. **Custom Domain (Optional):**
