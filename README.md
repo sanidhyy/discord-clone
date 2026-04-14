@@ -267,7 +267,7 @@ Useful resources and dependencies that are used in Discord Clone.
 - [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 16.0.10
 - [livekit-server-sdk](https://www.npmjs.com/package/livekit-server-sdk): ^2.1.2
 - [lucide-react](https://www.npmjs.com/package/lucide-react): ^0.574.0
-- [next](https://www.npmjs.com/package/next): 15.5.10
+- [next](https://www.npmjs.com/package/next): 15.5.15
 - [next-themes](https://www.npmjs.com/package/next-themes): ^0.3.0
 - [postcss](https://www.npmjs.com/package/postcss): ^8
 - [prisma](https://www.npmjs.com/package/prisma): ^5.11.0
