@@ -206,6 +206,14 @@ NEXT_PUBLIC_LIVEKIT_URL=wss://discord-clone-xxxxxxxxxx.livekit.cloud
 
 **NOTE:** Please make sure to keep your API keys and configuration values secure and do not expose them publicly.
 
+### :raising_hand: Need Help?
+
+If you run into issues during installation or setup:
+
+- **GitHub Discussions** — [Open a Q&A discussion](https://github.com/sanidhyy/discord-clone/discussions/new?category=q-a) for setup and troubleshooting help.
+- **Email** — [sanidhyyy@gmail.com](mailto:sanidhyyy@gmail.com)
+- **Discord** — `@sanidhyy`
+
 ## :camera: Screenshots
 
 ![Modern UI/UX](/.github/images/img1.png "Modern UI/UX")
