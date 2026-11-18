@@ -245,11 +245,11 @@ Useful resources and dependencies that are used in Discord Clone.
 - [@emoji-mart/data](https://www.npmjs.com/package/@emoji-mart/data): ^1.2.1
 - [@emoji-mart/react](https://www.npmjs.com/package/@emoji-mart/react): ^1.1.1
 - [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): ^3.10.0
-- [@livekit/components-react](https://www.npmjs.com/package/@livekit/components-react): 2.0.5
+- [@livekit/components-react](https://www.npmjs.com/package/@livekit/components-react): 2.9.25
 - [@livekit/components-styles](https://www.npmjs.com/package/@livekit/components-styles): 1.0.11
 - [@prisma/client](https://www.npmjs.com/package/@prisma/client): ^5.11.0
 - [@radix-ui/react-avatar](https://www.npmjs.com/package/@radix-ui/react-avatar): ^1.1.11
-- [@radix-ui/react-dialog](https://www.npmjs.com/package/@radix-ui/react-dialog): ^1.1.15
+- [@radix-ui/react-dialog](https://www.npmjs.com/package/@radix-ui/react-dialog): ^1.3.1
 - [@radix-ui/react-dropdown-menu](https://www.npmjs.com/package/@radix-ui/react-dropdown-menu): ^2.1.16
 - [@radix-ui/react-label](https://www.npmjs.com/package/@radix-ui/react-label): ^2.1.8
 - [@radix-ui/react-popover](https://www.npmjs.com/package/@radix-ui/react-popover): ^1.1.15
@@ -279,7 +279,7 @@ Useful resources and dependencies that are used in Discord Clone.
 - [next-themes](https://www.npmjs.com/package/next-themes): ^0.3.0
 - [postcss](https://www.npmjs.com/package/postcss): ^8
 - [prisma](https://www.npmjs.com/package/prisma): ^5.11.0
-- [query-string](https://www.npmjs.com/package/query-string): ^9.3.1
+- [query-string](https://www.npmjs.com/package/query-string): ^10.0.0
 - [react](https://www.npmjs.com/package/react): ^19.2.4
 - [react-dom](https://www.npmjs.com/package/react-dom): ^19.2.4
 - [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.71.1
@@ -292,7 +292,7 @@ Useful resources and dependencies that are used in Discord Clone.
 - [uploadthing](https://www.npmjs.com/package/uploadthing): ^7.7.4
 - [uuid](https://www.npmjs.com/package/uuid): ^13.0.0
 - [zod](https://www.npmjs.com/package/zod): ^4.3.6
-- [zustand](https://www.npmjs.com/package/zustand): ^5.0.11
+- [zustand](https://www.npmjs.com/package/zustand): ^5.1.0
 
 <!--- DEPENDENCIES_END --->
 
