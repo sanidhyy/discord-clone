@@ -263,7 +263,7 @@ Useful resources and dependencies that are used in Discord Clone.
 - [@types/react](https://www.npmjs.com/package/@types/react): ^19.2.14
 - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^19.2.3
 - [@types/uuid](https://www.npmjs.com/package/@types/uuid): ^11.0.0
-- [@uploadthing/react](https://www.npmjs.com/package/@uploadthing/react): ^6.4.1
+- [@uploadthing/react](https://www.npmjs.com/package/@uploadthing/react): ^7.3.3
 - [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.4.24
 - [axios](https://www.npmjs.com/package/axios): ^1.13.5
 - [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
